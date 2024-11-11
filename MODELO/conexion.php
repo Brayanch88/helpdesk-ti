@@ -15,3 +15,4 @@ if ($conexion->connect_error) {
 } else {
     echo "Conexión exitosa a la base de datos '$base_datos'";
 }*/
+// Comprobando que los cambios se guardan. 
