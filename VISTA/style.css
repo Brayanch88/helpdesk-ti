@@ -1,0 +1,173 @@
+/* Fondo con gradiente */
+body {
+    background: linear-gradient(to right, #e7e9e3, #b4e1f3);
+    height: 100vh;
+    /* Asegura que el fondo cubra toda la página */
+    margin: 0;
+    display: flex;
+    /* Usamos Flexbox para el centrado */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+}
+
+/* El contenedor de la página, incluyendo la imagen y el formulario */
+.container {
+    text-align: center;
+    /* Centra el texto y otros elementos dentro del contenedor */
+    padding: 2px;
+}
+
+/* Ajusta el tamaño de la imagen */
+img {
+    width: 100px;
+    margin-bottom: 2px;
+    /* Espacio debajo de la imagen */
+}
+
+/* Estilo para el formulario */
+form {
+    display: block;
+    /* Se usa block para mantener los elementos en línea (no columna) */
+    text-align: left;
+    /* Alinea los elementos a la izquierda */
+}
+
+/* Estilo para el contenedor del botón (centrado) */
+.button-container {
+    display: flex;
+    justify-content: center;
+    /* Centra el botón horizontalmente */
+    align-items: center;
+    /* Centra el botón verticalmente */
+    margin-top: 2px;
+    /* Espacio superior */
+    width: 100%;
+    /* Hace que el contenedor ocupe el 100% del ancho del formulario */
+}
+
+/* Estilo básico para el botón */
+button {
+    background-color: #007bff;
+    /* Color de fondo azul */
+    color: white;
+    /* Color del texto */
+    border: none;
+    /* Sin bordes */
+    padding: 10px 20px;
+    /* Espaciado interno */
+    font-size: 16px;
+    /* Tamaño del texto */
+    border-radius: 12px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    /* El cursor cambia a mano cuando se pasa sobre el botón */
+    transition: all 0.3s ease;
+    /* Transición suave para efectos de hover y clic */
+    margin-top: 10px;
+    /* Espacio superior del botón */
+}
+
+/* Efecto al pasar el mouse por encima (hover) */
+button:hover {
+    background-color: #0056b3;
+    /* Cambia a un tono más oscuro de azul */
+    box-shadow: 0 0 10px 2px rgba(0, 191, 255, 0.5);
+    /* Luz celeste alrededor del botón */
+}
+
+/* Efecto al hacer clic (activo) */
+button:active {
+    background-color: #003366;
+    /* Cambia el fondo a un azul más oscuro cuando se presiona */
+    box-shadow: 0 0 5px 2px rgba(0, 191, 255, 0.7);
+    /* Efecto de luz celeste más pronunciado */
+    transform: scale(0.98);
+    /* Efecto de "presionar" (reducir ligeramente el tamaño del botón) */
+}
+
+/* Contenedor para cada par de label e input */
+.form-group {
+    display: flex;
+    /* Usa Flexbox para alinear los elementos horizontalmente */
+    align-items: center;
+    /* Alinea los items verticalmente al centro */
+    margin-bottom: 15px;
+    /* Espacio entre cada par de label-input */
+}
+
+/* Estilo para los labels */
+label {
+    width: 150px;
+    /* Define un ancho fijo para los labels para que no cambien de tamaño */
+    text-align: left;
+    /* Alinea el texto del label a la izquierda */
+    margin-right: 10px;
+    /* Espacio a la derecha del label */
+}
+
+/* Estilo para los inputs */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    /* Hace que los inputs ocupen el resto del espacio disponible */
+    padding: 8px;
+    /* Espaciado interno */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    border: 1px solid #ccc;
+    /* Borde gris claro */
+}
+
+/* Estilo para el enlace "Olvidé mi contraseña" */
+.forgot-password {
+    display: inline-block;
+    /* Asegura que el enlace se muestre en línea */
+    color: #007bff;
+    /* Color del texto en azul */
+    text-decoration: none;
+    /* Elimina el subrayado por defecto */
+    font-size: 10px;
+    /* Tamaño de fuente un poco más pequeño */
+    margin-top: 1px;
+    /* Espacio encima del enlace */
+}
+
+/* Efecto al pasar el mouse por encima */
+.forgot-password:hover {
+    text-decoration: underline;
+    /* Subraya el texto al pasar el ratón */
+}
+
+/* No hay efecto al hacer clic */
+.forgot-password:active {
+    color: #0056b3;
+    /* Cambia el color a un azul más oscuro cuando se presiona */
+}
+
+/* Estilo para el enlace "Olvidé mi contraseña" */
+.forgot-password {
+    display: inline-block;
+    /* Asegura que el enlace se muestre en línea */
+    color: #007bff;
+    /* Color del texto en azul */
+    text-decoration: none;
+    /* Elimina el subrayado por defecto */
+    font-size: 14px;
+    /* Tamaño de fuente un poco más pequeño */
+    margin-top: 1px;
+    /* Espacio encima del enlace */
+    font-style: italic;
+    /* Aplica estilo cursiva */
+    text-align: right;
+    /* Alinea el texto a la derecha */
+    width: 100%;
+    /* Asegura que ocupe todo el ancho disponible */
+}
+
+/* Efecto al pasar el mouse por encima */
+.forgot-password:hover {
+    text-decoration: underline;
+    /* Subraya el texto al pasar el ratón */
+}
