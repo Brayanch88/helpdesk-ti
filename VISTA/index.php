@@ -17,7 +17,7 @@
             <div>
                 <div class="subcolumna">
                     <div class="izquierda-subcolumna">
-                        <img src="http://localhost/servicedesk/VISTA/img/insigniasb.png" alt="Imagen de insignia">
+                        <img src="../VISTA/img/insigniasb.png" alt="Imagen de insignia">
                     </div>
                     <!-- Subcolumna para el texto -->
                     <div class="derecha-subcolumna" style="color: #969493;">

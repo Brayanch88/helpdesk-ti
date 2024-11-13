@@ -42,7 +42,7 @@ body {
     /* Alinea el contenido verticalmente */
     justify-content: center;
     /* Centra el contenido horizontalmente */
-    background-image: url('http://localhost/servicedesk/VISTA/img/gestionti3.jpg');
+    background-image: url('../VISTA/img/gestionti3.jpg');
     background-size: cover;
     /* Asegura que la imagen cubra toda la columna */
     background-position: center;
