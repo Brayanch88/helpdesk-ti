@@ -74,38 +74,45 @@ $conexion->close();
         <nav class="navegacion">
             <ul>
                 <li>
-                    <a href=""></a>
-                    <ion-icon name="bar-chart-outline"></ion-icon>
-                    <span>Dashboard</span>
+                    <a href="">
+                        <ion-icon name="bar-chart-outline"></ion-icon>
+                        <span>Dashboard</span>
+                    </a>
                 </li>
                 <li>
-                    <a href=""></a>
-                    <ion-icon name="business-outline"></ion-icon>
-                    <span>Departamentos</span>
+                    <a href="">
+                        <ion-icon name="business-outline"></ion-icon>
+                        <span>Departamentos</span>
+                    </a>
                 </li>
                 <li>
-                    <a href=""></a>
-                    <ion-icon name="person-outline"></ion-icon>
-                    <span>Trabajadores</span>
+                    <a href="">
+                        <ion-icon name="person-outline"></ion-icon>
+                        <span>Trabajadores</span>
+                    </a>
                 </li>
                 <li>
-                    <a href=""></a>
-                    <ion-icon name="calendar-outline"></ion-icon>
-                    <span>Calendario</span>
+                    <a href="">
+                        <ion-icon name="calendar-outline"></ion-icon>
+                        <span>Calendario</span>
+                    </a>
                 </li>
                 <li>
-                    <a href=""></a>
-                    <ion-icon name="clipboard-outline"></ion-icon>
-                    <span>Reportes</span>
+                    <a href="">
+                        <ion-icon name="clipboard-outline"></ion-icon>
+                        <span>Reportes</span>
+                    </a>
                 </li>
                 <li>
-                    <a href=""></a>
-                    <ion-icon name="mail-unread-outline"></ion-icon>
-                    <span>Mensajes</span>
+                    <a href="">
+                        <ion-icon name="mail-unread-outline"></ion-icon>
+                        <span>Mensajes</span>
+                    </a>
                 </li>
                 <li style="margin-top: 80px">
-                    <a href=""></a>
-                    <ion-icon name="settings-outline"></ion-icon>
+                    <a href="">
+                        <ion-icon name="settings-outline"></ion-icon>
+                    </a>
                 </li>
             </ul>
         </nav>

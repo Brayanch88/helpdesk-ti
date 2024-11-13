@@ -1,11 +1,14 @@
 :root {
-    --color-barra-lateral: rgb(210, 211, 219);
+    --color-barra-lateral: rgb(216, 216, 216);
 
-    --color-texto: rgb(0, 0, 0);
-    --color-texto-menu: rgb(110, 110, 110);
+    --color-texto: rgb(63, 61, 61);
+    --color-texto-menu: rgb(122, 122, 122);
 
     --color-boton: rgb(0, 0, 0);
     --color-boton-texto: rgb(255, 255, 255);
+
+    --color-menu-hover: rgb(100, 100, 100);
+    --color-menu-hover-texto: rgb(0, 0, 0);
 }
 
 * {
@@ -127,6 +130,12 @@ body {
     color: var(--color-texto-menu);
     padding-left: 5px;
     justify-content: flex-start;
+}
+
+.barra-lateral .navegacion a:hover {
+    width: 100%;
+    background-color: var(--color-menu-hover);
+    color: var(--color-menu-hover-texto);
 }
 
 .barra-lateral .navegacion ion-icon {
