@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost/servicedesk/VISTA/index.php",
+            "url": "http://localhost/helpdesk-ti/VISTA/index.php",
             "webRoot": "${workspaceFolder}"
         }
     ]
