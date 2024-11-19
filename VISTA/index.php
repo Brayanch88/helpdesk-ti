@@ -56,6 +56,7 @@
                     <div class="button-container" style="margin-top: 30px;">
                         <button type="submit" name="login" style="width: 100%;">Iniciar Sesión</button>
                     </div>
+
                     <?php
                     include('../MODELO/conexion.php');
 
@@ -68,20 +69,30 @@
                         $password = $_POST['password'];
 
                         // Consulta para verificar las credenciales en la base de datos
-                        $sql = "SELECT * FROM tb_usuario WHERE usuario = ? AND contraseña = ?";
+                        $sql = "SELECT id_tipo_usuario FROM tb_usuario WHERE usuario = ? AND contraseña = ?";
                         $stmt = $conexion->prepare($sql);
                         $stmt->bind_param("ss", $username, $password);
                         $stmt->execute();
                         $resultado = $stmt->get_result();
 
-                        // Si se encuentra un resultado, redirecciona a principal.php
+                        // Si se encuentra un resultado
                         if ($resultado->num_rows > 0) {
-                            session_start(); // Iniciar sesión
+                            $row = $resultado->fetch_assoc();
+                            $id_tipo_usuario = $row['id_tipo_usuario'];
+
+                            // Iniciar sesión
+                            session_start();
                             $_SESSION['usuario'] = $username; // Guardar usuario en sesión
-                            header("Location: principal.php"); //direccionar a principal.php
+
+                            // Redirigir según el tipo de usuario
+                            if ($id_tipo_usuario == 1) {
+                                header("Location: registro.php");
+                            } else {
+                                header("Location: principal.php");
+                            }
                             exit(); // Terminar el script después de la redirección
                         } else {
-                            echo "<p style='text-align: center; font-style: italic; color: blue; font-size: 12px;'>Usuario o contraseña incorrectos.</p>";
+                            $error_message = "Usuario o contraseña incorrectos.";
                         }
 
                         // Cerrar recursos
@@ -89,11 +100,14 @@
                         $conexion->close();
                     }
 
+                    // Mostrar el formulario de login
+
                     /* Mostrar el mensaje de error solo si existe
                 if ($error_message != '') {
                     echo "<p>$error_message</p>";
                 }*/
                     ?>
+
                 </form>
             </div>
 

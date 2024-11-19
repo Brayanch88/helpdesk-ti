@@ -57,6 +57,10 @@ $conexion->close();
 </head>
 
 <body>
+    <div class="menu">
+        <ion-icon name="menu-outline"></ion-icon>
+        <ion-icon name="close-outline"></ion-icon>
+    </div>
     <div class="barra-lateral">
         <div class="nombre-pagina">
             <ion-icon id="foto" name="person-circle-outline"></ion-icon>
@@ -67,50 +71,77 @@ $conexion->close();
             </div>
         </div>
 
-        <button class="boton">
+        <button class="boton" id="abrirModal">
             <ion-icon name="ticket-outline"></ion-icon>
             <span>Nuevo Ticket</span>
         </button>
+
+        <div id="modalTicket" class="modal">
+            <div class="modal-contenido">
+                <span id="cerrarModal">&times;</span>
+                <iframe id="iframeTicket" src="" width="100%" height="500px" style="border:none;"></iframe>
+            </div>
+        </div>
+
         <nav class="navegacion">
             <ul>
                 <li>
-                    <a href="">
+                    <a id="dashboard" data-page="dashboard.php">
                         <ion-icon name="bar-chart-outline"></ion-icon>
                         <span>Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a data-page="departamentos.php">
                         <ion-icon name="business-outline"></ion-icon>
                         <span>Departamentos</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a data-page="trabajadores.php">
                         <ion-icon name="person-outline"></ion-icon>
                         <span>Trabajadores</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a data-page="calendario.php">
                         <ion-icon name="calendar-outline"></ion-icon>
                         <span>Calendario</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a data-page="reportes.php">
                         <ion-icon name="clipboard-outline"></ion-icon>
                         <span>Reportes</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a data-page="mensajes.php">
                         <ion-icon name="mail-unread-outline"></ion-icon>
-                        <span>Mensajes</span>
+                        <span>Tickets</span>
                     </a>
                 </li>
-                <li style="margin-top: 80px">
-                    <a href="">
+            </ul>
+        </nav>
+
+        <div class="linea"></div>
+
+        <div class="modo-oscuro">
+            <div class="info">
+                <ion-icon name="moon-outline"></ion-icon>
+                <span>Modo oscuro</span>
+            </div>
+            <div class="switch">
+                <div class="base">
+                    <div class="circulo"></div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navegacion">
+            <ul>
+                <li style="margin-top: 50px">
+                    <a data-page="configuracion.php">
                         <ion-icon name="settings-outline"></ion-icon>
                     </a>
                 </li>
@@ -118,12 +149,17 @@ $conexion->close();
         </nav>
     </div>
 
+    <main id="main-content">
+        <!-- El contenido del dashboard se cargará automáticamente aquí -->
+    </main>
+
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <!-- Verificación en JS -->
     <script defer src="../CONTROLADOR/script.js"></script>
-    </script>
+    <script defer src="../CONTROLADOR/script1.js"></script>
 </body>
 
 </html>
