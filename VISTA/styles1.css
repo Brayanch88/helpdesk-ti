@@ -1,14 +1,46 @@
 :root {
-    --color-barra-lateral: rgb(216, 216, 216);
+    --color-barra-lateral: rgb(126, 204, 255);
 
     --color-texto: rgb(63, 61, 61);
-    --color-texto-menu: rgb(122, 122, 122);
+    --color-texto-menu: rgb(0, 0, 0);
 
     --color-boton: rgb(0, 0, 0);
     --color-boton-texto: rgb(255, 255, 255);
+    --color-boton-hover: #0056b3;
+    /* Color al pasar el cursor */
+    --color-boton-activo: #003d80;
+    /* Color al hacer clic */
 
-    --color-menu-hover: rgb(100, 100, 100);
-    --color-menu-hover-texto: rgb(0, 0, 0);
+    --color-menu-hover: rgb(22, 181, 255);
+    --color-menu-hover-texto: rgb(255, 255, 255);
+
+    --color-linea: rgb(46, 171, 255);
+
+    --color-switch-base: rgb(255, 255, 255);
+    --color-switch-circulo: rgb(172, 170, 166);
+}
+
+.dark-mode {
+    --color-barra-lateral: rgb(0, 23, 39);
+
+    --color-texto: rgb(255, 255, 255);
+    --color-texto-menu: rgb(255, 255, 255);
+
+    --color-boton: rgb(255, 255, 255);
+    --color-boton-texto: rgb(0, 0, 0);
+    --color-boton-hover: #83bfff;
+    /* Color al pasar el cursor */
+    --color-boton-activo: #003d80;
+    /* Color al hacer clic */
+
+
+    --color-menu-hover: rgb(7, 85, 255);
+    --color-menu-hover-texto: rgb(255, 255, 255);
+
+    --color-linea: rgb(0, 1, 34);
+
+    --color-switch-base: rgb(165, 164, 164);
+    --color-switch-circulo: rgb(71, 71, 71);
 }
 
 * {
@@ -23,13 +55,34 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
+/*----menu*/
+.menu {
+    background-color: var(--color-boton);
+    color: var(--color-boton-texto);
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    right: 15px;
+    top: 15px;
+    z-index: 100;
+}
+
+/*------barra lateral*/
 .barra-lateral {
+    position: fixed;
     width: 300px;
     height: 100%;
     overflow: hidden;
     padding: 20px 15px;
     background-color: var(--color-barra-lateral);
-    transition: width 0.5s ease;
+    transition: width 0.5s ease, background-color 0.5s ease, left 0.5s ease;
+    z-index: 50;
 }
 
 .mini-barra-lateral {
@@ -54,6 +107,7 @@ body {
 .barra-lateral .nombre-pagina {
     width: 100%;
     height: 45px;
+    color: var(--color-texto);
     margin-bottom: 40px;
     display: flex;
     align-items: center;
@@ -89,6 +143,7 @@ body {
 .barra-lateral .boton {
     width: 100%;
     height: 45px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,6 +151,22 @@ body {
     border-radius: 10px;
     background-color: var(--color-boton);
     color: var(--color-boton-texto);
+    transition: background-color 0.5s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+/* Efecto de cambio de color al hacer clic */
+.barra-lateral .boton:active {
+    background-color: var(--color-boton-activo);
+    /* Define este color en tu archivo de variables */
+    transform: scale(0.95);
+    /* Pequeño efecto de presión */
+}
+
+/* Efecto de hover para cambiar el color del botón al pasar el cursor */
+.barra-lateral .boton:hover {
+    background-color: var(--color-boton-hover);
+    /* Define este color en tu archivo de variables */
 }
 
 .barra-lateral .boton ion-icon {
@@ -126,7 +197,6 @@ body {
     align-items: center;
     text-decoration: none;
     border-radius: 10px;
-    background-color: var(--color-barra-lateral);
     color: var(--color-texto-menu);
     padding-left: 5px;
     justify-content: flex-start;
@@ -142,4 +212,146 @@ body {
     min-width: 50px;
     font-size: 20px;
     margin-left: 0;
+}
+
+/*para hacer la lìnea*/
+.barra-lateral .linea {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-linea);
+}
+
+/*para cambiar el modo oscuro*/
+.barra-lateral .modo-oscuro {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.barra-lateral .modo-oscuro .info {
+    overflow: hidden;
+    width: 150px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    color: var(--color-texto-menu);
+}
+
+.barra-lateral .modo-oscuro ion-icon {
+    width: 50px;
+    font-size: 20px;
+}
+
+/*ahora el switch*/
+.barra-lateral .modo-oscuro .switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.barra-lateral .modo-oscuro .base {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 35px;
+    height: 20px;
+    background-color: var(--color-switch-base);
+    border-radius: 50px;
+    transition: background-color 0.5s ease;
+}
+
+.barra-lateral .modo-oscuro .circulo {
+    width: 18px;
+    height: 90%;
+    background-color: var(--color-switch-circulo);
+    border-radius: 50%;
+    position: absolute;
+    left: 2px;
+    transition: left 0.5s ease, background-color 0.5s ease;
+}
+
+.barra-lateral .modo-oscuro .circulo.prendido {
+    left: 15px;
+}
+
+/*para la parte fija de la página web*/
+main {
+    margin-left: 300px;
+    padding: 20px;
+    transition: margin-left 0.5s ease;
+}
+
+main.min-main {
+    margin-left: 80px;
+}
+
+/* ----hacerlo responsive*/
+@media(max-width: 600px) {
+    .barra-lateral {
+        position: fixed;
+        left: -300px;
+    }
+
+    .max-barra-lateral {
+        left: 0;
+    }
+
+    .menu {
+        display: flex;
+    }
+
+    .menu ion-icon:nth-child(2) {
+        display: none;
+    }
+
+    /*...... parte principal de la página*/
+
+    #dashboard {
+        background-color: var(--color-menu-hover);
+        color: var(--color-menu-hover-texto);
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    main.min-main {
+        margin-left: 0;
+    }
+}
+
+/* Estilo del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Contenido del modal */
+.modal-contenido {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 70%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Botón para cerrar el modal */
+#cerrarModal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
 }
